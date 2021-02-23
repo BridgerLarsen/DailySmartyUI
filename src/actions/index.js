@@ -12,5 +12,20 @@ export function fetchRecentPosts() {
                     payload: response.data.posts
                 })
             })
+            .catch(error => {
+                console.log("fetchRecentPosts error", error);
+            })
+    }
+}
+
+export function fetchQueriedPosts(query) {
+    return function(dispatch) {
+        axios.get(`https://api.dailysmarty.com/search?q=${query}`)
+            .then(response => {
+                console.log("fetchQueriedPosts", response)
+            })
+            .catch(error => {
+                console.log("fetchQueriedPosts error", error);
+            })
     }
 }
