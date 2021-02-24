@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import Post from './post';
 
 class ResultsPosts extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+    }
+
+    renderResultsPosts() {
+        const resultsPosts = this.props.resultsPosts.map((post, index) => {
+            return (
+                <Post key={index} {...post} />
+            )
+        })
+
+        return resultsPosts;
     }
 
     render() {
@@ -10,7 +23,7 @@ class ResultsPosts extends Component {
             <div className="results-posts-wrapper">
                 <div className="results-posts">
                     <div className="results-post">
-                        Results Here
+                        {this.renderResultsPosts()}
                     </div>
                 </div>
             </div>
@@ -18,4 +31,10 @@ class ResultsPosts extends Component {
     }
 }
 
-export default ResultsPosts;
+const mapStateToProps = state => {
+    return {
+        resultsPosts: state.posts.resultsPosts
+    }
+}
+
+export default connect(mapStateToProps)(ResultsPosts);
