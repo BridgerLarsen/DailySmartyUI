@@ -6,7 +6,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import reducers from "./reducers";
 import thunk from 'redux-thunk';
 
-import App from "./components/app";
+import Home from "./components/home";
 import Results from './components/results';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(compose((window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : null))(createStore));
@@ -18,7 +18,7 @@ function main() {
     <Provider store={createStoreWithMiddleware(reducers)}>
       <BrowserRouter>
         <Switch>
-          <Route exact path='/' component={App} />
+          <Route exact path='/' component={Home} />
           <Route path='/results' component={Results} />
         </Switch>
       </BrowserRouter>

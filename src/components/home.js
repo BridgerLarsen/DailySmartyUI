@@ -7,7 +7,7 @@ import Logo from './main-logo';
 import SearchBar from './searchBar';
 import RecentPosts from './recent-posts';
 
-class App extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
   }
@@ -28,4 +28,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, actions)(App);
+export default connect(null, actions)(Home);
