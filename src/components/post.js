@@ -56,7 +56,7 @@ class Post extends Component {
                         {this.props.title}
                     </div>
 
-                    <div className="result-post-link-wrapper">
+                    <div className="result-post-link">
                         {this.renderLinks()}
                     </div>
                 </li>
