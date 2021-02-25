@@ -20,8 +20,7 @@ class Home extends Component {
   handleSearchBarSubmit(query) {
     this.props.fetchQueriedPosts(query, () => {
         this.props.history.push('/results');
-      }
-    );
+      });
 }
 
   render() {
