@@ -3,13 +3,13 @@
 
     .search-bar {
         input {
-            padding: 0px;
+            padding-left: 35px;
             color: $gray-one;
             box-shadow: 2px 3px 28px 1px rgba(0, 0, 0, 0.1); 
             border: 0px solid transparent;
             border-radius: 5px;
             height: 118px;
-            width: 100%;
+            width: -webkit-fill-available;
             font-size: 40px;
             transition: 0.2s all;
 

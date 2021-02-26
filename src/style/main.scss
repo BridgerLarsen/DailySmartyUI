@@ -1,5 +1,7 @@
-@import "variables.scss";
-@import "base.scss";
-@import "home.scss";
-@import "searchBar.scss";
-@import "post.scss";
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./base.scss";
+@import "./home.scss";
+@import "./search-bar.scss";
+@import "./recent-posts.scss";
+@import "./post.scss";
