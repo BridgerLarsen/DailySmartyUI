@@ -1,0 +1,32 @@
+.search-bar-wrapper {
+    width: 100%;
+
+    .search-bar {
+        input {
+            padding: 0px;
+            color: $gray-one;
+            box-shadow: 2px 3px 28px 1px rgba(0, 0, 0, 0.1); 
+            border: 0px solid transparent;
+            border-radius: 5px;
+            height: 118px;
+            width: 100%;
+            font-size: 40px;
+            transition: 0.2s all;
+
+            &:focus {
+                outline: none;
+                box-shadow: 2px 3px 28px 1px rgba(0, 0, 0, 0.3);
+            }
+
+            &::placeholder {
+                color: #B3B3B3;
+            }
+        }
+
+        p {
+            font-size: 14px;
+            text-align: right;
+            color: $gray-two;
+        }
+    }
+}
