@@ -6,8 +6,17 @@ class Post extends Component {
         super(props);
 
         this.state = {
-            height: 0
+            height: 0,
+            animatedHoverEffectClass: ""
         }
+    }
+
+    handleMouseEnter() {
+        this.setState({ animatedHoverEffectClass: "animatedHoverEffectClass" });
+    }
+
+    handleMouseLeave() {
+        this.setState({ animatedHoverEffectClass: "" });
     }
 
     renderTopics() {
@@ -58,21 +67,27 @@ class Post extends Component {
                     </div>
     
                     <div className="result-post-title-link-wrapper"
-                        onMouseEnter={() => this.setState({ height: 70 })}
-                        onMouseLeave={() => this.setState({ height: 0 })}
+                        // onMouseEnter={() => this.setState({ height: 70 })}
+                        // onMouseLeave={() => this.setState({ height: 0 })}
+                        onMouseEnter={() => this.handleMouseEnter()}
+                        onMouseLeave={() => this.handleMouseLeave()}
                     >
                         <div className="result-post-title" >
                             <a href={this.props.url_for_post}>{this.props.title}</a>
                         </div>
 
-                        <AnimateHeight
+                        <div className={"result-post-link " + this.state.animatedHoverEffectClass}>
+                            {this.renderLinks()}
+                        </div> 
+                        
+                        {/* <AnimateHeight  // this will make a animated hover effect like we did ourselves.
                             duration={500}
                             height={this.state.height}    
                         >
                             <div className="result-post-link">
                                 {this.renderLinks()}
                             </div>
-                        </AnimateHeight>
+                        </AnimateHeight> */}
                     </div>
                 </li>
             )
