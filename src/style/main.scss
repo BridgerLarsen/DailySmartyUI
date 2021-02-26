@@ -1,20 +1,3 @@
-.post-topic {
-    margin: 0px 4px;
-}
-
-.result-post-link {
-    height: 0px;
-    transition: 1s;
-
-    a {
-        color: transparent;
-    }
-}
-
-.result-post-title-link-wrapper:hover .result-post-link {
-    height: 70px;
-}
-.animatedHoverEffectClass a {
-    transition: 1.5s ease-in-out;
-    color: black;
-}
+@import "base.scss";
+@import "post.scss";
+@import "home.scss";

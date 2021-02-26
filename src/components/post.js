@@ -6,7 +6,7 @@ class Post extends Component {
         super(props);
 
         this.state = {
-            height: 0,
+            // height: 0,
             animatedHoverEffectClass: ""
         }
     }
