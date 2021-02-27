@@ -8,9 +8,8 @@
             box-shadow: 2px 3px 28px 1px rgba(0, 0, 0, 0.1); 
             border: 0px solid transparent;
             border-radius: 5px;
-            height: 118px;
             width: -webkit-fill-available;
-            font-size: 40px;
+            
             transition: 0.2s all;
 
             &:focus {
@@ -30,5 +29,22 @@
             text-align: right;
             color: $gray-two;
         }
+    }
+}
+
+.search-bar-home {
+    input {
+        font-size: 40px;
+        height: 118px;
+    }
+}
+
+.search-bar-results {
+    align-content: start;
+    justify-items: center;
+
+    input {
+        height: 36px;
+        font-size: 22px;
     }
 }

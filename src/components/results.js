@@ -28,7 +28,7 @@ class Results extends Component {
         return (
             <div className="results">
                 <Logo size={55} />
-                <SearchBar onSubmit={query => this.handleResultsSearchBarSubmit(query)} />
+                <SearchBar page="results" onSubmit={query => this.handleResultsSearchBarSubmit(query)} />
                 {this.state.isLoading ? (
                     <div className="content-loader">
                         <FontAwesomeIcon icon="spinner" spin />
