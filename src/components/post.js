@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import AnimateHeight from 'react-animate-height';
 
 class Post extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            // height: 0,
             animatedHoverEffectClass: ""
         }
     }
@@ -51,7 +49,7 @@ class Post extends Component {
             return ( 
                 <li className="recent-post">
                     <div className="recent-post-title">
-                        {this.props.title}
+                        <a href={this.props.url_for_post}>{this.props.title}</a>
                     </div>
     
                     <div className="recent-post-topics" >
@@ -61,14 +59,12 @@ class Post extends Component {
             )
         } else if (this.props.type === "results") {
             return ( 
-                <li className="result-post">
+                <div className="result-post">
                     <div className="result-post-topics">
                         {this.renderTopics()}
                     </div>
     
                     <div className="result-post-title-link-wrapper"
-                        // onMouseEnter={() => this.setState({ height: 70 })}
-                        // onMouseLeave={() => this.setState({ height: 0 })}
                         onMouseEnter={() => this.handleMouseEnter()}
                         onMouseLeave={() => this.handleMouseLeave()}
                     >
@@ -76,20 +72,11 @@ class Post extends Component {
                             <a href={this.props.url_for_post}>{this.props.title}</a>
                         </div>
 
-                        <div className={"result-post-link " + this.state.animatedHoverEffectClass}>
+                        <div className={"result-post-links " + this.state.animatedHoverEffectClass}>
                             {this.renderLinks()}
                         </div> 
-                        
-                        {/* <AnimateHeight  // this will make a animated hover effect like we did ourselves.
-                            duration={500}
-                            height={this.state.height}    
-                        >
-                            <div className="result-post-link">
-                                {this.renderLinks()}
-                            </div>
-                        </AnimateHeight> */}
                     </div>
-                </li>
+                </div>
             )
         }
     }

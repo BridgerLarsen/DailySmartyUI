@@ -1,8 +1,25 @@
-.post-topic {
-    margin-left: 4px;
+// recent posts styles:
+
+.recent-post {
+    .recent-post-title a {
+        color: $gray-one;
+        text-decoration: none;
+    }
+
+    .recent-post-topics {
+        .post-topic {
+            color: $gray-two;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: left;
+            margin-right: 10px;
+        }
+    }
 }
 
-.result-post-link {
+// results posts styles:
+
+.result-post-links {
     height: 0px;
     transition: 1s;
 
@@ -11,10 +28,35 @@
     }
 }
 
-.result-post-title-link-wrapper:hover .result-post-link {
+.result-post-title-link-wrapper:hover .result-post-links {
     height: 70px;
 }
 .animatedHoverEffectClass a {
     transition: 1.5s ease-in-out;
-    color: black;
+    color: blue;
+}
+
+.result-post {
+    display: grid;
+    grid-row-gap: 20px;
+        .result-post-topics {
+            .post-topic {
+                color: $blue-one;
+                margin-right: 8px;
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
+
+        .result-post-title-link-wrapper {
+            display: grid;
+            grid-row-gap: 18px;
+
+            .result-post-title a {
+                color: $gray-one;
+                font-size: 18px;
+                line-height: 22px;
+                text-decoration: none;
+            }
+        }
 }

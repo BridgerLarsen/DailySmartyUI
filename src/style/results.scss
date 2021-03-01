@@ -1,3 +1,14 @@
 .results {
     @include defualtPageLayout();
+    margin-top: 42px;
+    grid-row-gap: 44px;
+
+    .results-posts-wrapper {
+        .results-posts {
+            .results-post {
+                display: grid;
+                grid-row-gap: 20px;
+            }
+        }
+    }
 }

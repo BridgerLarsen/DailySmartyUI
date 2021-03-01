@@ -1,4 +1,5 @@
 .recent-posts {
+    justify-items: center;
 
     ul {
         @include HideUlTags();
