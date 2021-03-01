@@ -31,10 +31,23 @@
 .result-post-title-link-wrapper:hover .result-post-links {
     height: 70px;
 }
-.animatedHoverEffectClass a {
-    transition: 1.5s ease-in-out;
-    color: blue;
+
+.result-post-title-link-wrapper:hover .post-link-box {
+    min-width: 70px; 
+    background-color: $gray-three;
 }
+
+
+.animatedHoverEffectBox {
+    transition: 1s ease-in-out;
+}
+
+.animatedHoverEffectLink a {
+    transition: 1s ease-in-out;
+    color: $gray-one;
+}
+
+
 
 .result-post {
     display: grid;
@@ -60,3 +73,23 @@
             }
         }
 }
+
+.result-post-links {
+    display: flex;
+
+    .post-link-container {
+        display: flex;
+        min-height: 70px;
+        margin-right: 30px;
+    
+        .post-link-box {
+            margin-right: 16px;
+        }
+    
+        .post-link a {
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+}
+

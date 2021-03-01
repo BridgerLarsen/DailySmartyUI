@@ -5,16 +5,23 @@ class Post extends Component {
         super(props);
 
         this.state = {
-            animatedHoverEffectClass: ""
+            animatedHoverEffectLink: "",
+            animatedHoverEffectBox: ""
         }
     }
 
     handleMouseEnter() {
-        this.setState({ animatedHoverEffectClass: "animatedHoverEffectClass" });
+        this.setState({ 
+            animatedHoverEffectLink: "animatedHoverEffectLink", 
+            animatedHoverEffectBox: "animatedHoverEffectBox"
+        });
     }
 
     handleMouseLeave() {
-        this.setState({ animatedHoverEffectClass: "" });
+        this.setState({ 
+            animatedHoverEffectLink: "", 
+            animatedHoverEffectBox: ""
+        });
     }
 
     renderTopics() {
@@ -32,7 +39,7 @@ class Post extends Component {
             return (
                 <div className="post-link-container" key={index}>
                     
-                    <div className="post-link-box"></div>
+                    <div className={"post-link-box " + this.state.animatedHoverEffectBox}></div>
                     
                     <div className="post-link">
                         <a href={post_link.link_url}>Useful Link #{index + 1}</a>
@@ -72,7 +79,7 @@ class Post extends Component {
                             <a href={this.props.url_for_post}>{this.props.title}</a>
                         </div>
 
-                        <div className={"result-post-links " + this.state.animatedHoverEffectClass}>
+                        <div className={"result-post-links " + this.state.animatedHoverEffectLink}>
                             {this.renderLinks()}
                         </div> 
                     </div>
