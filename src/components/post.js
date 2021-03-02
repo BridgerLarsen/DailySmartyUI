@@ -34,6 +34,29 @@ class Post extends Component {
         return topics;
     }
 
+    getNameForPostLink(str) {
+        var index = str.lastIndexOf('/');
+        var link = str.substring(index + 1, str.length);
+
+        if (index + 1 === str.length) {
+            link = str.slice(0, index);
+            index = link.lastIndexOf('/');
+            link = str.substring(index + 1, str.length - 1) 
+        } 
+        
+        if (link.includes('-')) {
+            var newLink = link.replace(/[-]/g, ' ')
+            link = newLink;
+        }
+
+        if (link.includes('.htm')) {
+            var newLink = link.replace('.htm' , '');
+            link = newLink;
+        } 
+
+        return link;
+    }
+
     renderLinks() {
         let links = this.props.post_links.map((post_link, index ) => {
             return (
@@ -42,7 +65,7 @@ class Post extends Component {
                     <div className={"post-link-box " + this.state.animatedHoverEffectBox}></div>
                     
                     <div className="post-link">
-                        <a href={post_link.link_url}>Useful Link #{index + 1}</a>
+                        <a href={post_link.link_url}>{this.getNameForPostLink(post_link.link_url)}</a>
                     </div>
                 </div>
             )
