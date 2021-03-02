@@ -9,3 +9,8 @@
     width: 66vw;
     display: grid;
 }
+
+@mixin fontSizeLineHeight {
+    font-size: 14px;
+    line-height: 17px;
+}

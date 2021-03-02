@@ -6,21 +6,24 @@ class Post extends Component {
 
         this.state = {
             animatedHoverEffectLink: "",
-            animatedHoverEffectBox: ""
+            animatedHoverEffectBox: "",
+            animatedHoverEffectNoContent: ""
         }
     }
 
     handleMouseEnter() {
         this.setState({ 
             animatedHoverEffectLink: "animatedHoverEffectLink", 
-            animatedHoverEffectBox: "animatedHoverEffectBox"
+            animatedHoverEffectBox: "animatedHoverEffectBox",
+            animatedHoverEffectNoContent: "animatedHoverEffectNoContent"
         });
     }
 
     handleMouseLeave() {
         this.setState({ 
             animatedHoverEffectLink: "", 
-            animatedHoverEffectBox: ""
+            animatedHoverEffectBox: "",
+            animatedHoverEffectNoContent: ""
         });
     }
 
@@ -37,6 +40,7 @@ class Post extends Component {
     getNameForPostLink(str) {
         var index = str.lastIndexOf('/');
         var link = str.substring(index + 1, str.length);
+        var newLink = link;
 
         if (index + 1 === str.length) {
             link = str.slice(0, index);
@@ -45,12 +49,13 @@ class Post extends Component {
         } 
         
         if (link.includes('-')) {
-            var newLink = link.replace(/[-]/g, ' ')
+            newLink = link.replace(/[-]/g, ' ')
             link = newLink;
         }
 
-        if (link.includes('.htm')) {
-            var newLink = link.replace('.htm' , '');
+        if (link.includes('.htm') | link.includes('.html')) {
+            newLink = link.replace('.htm' , '')
+            newLink = link.replace('.html', '')
             link = newLink;
         } 
 
@@ -71,6 +76,14 @@ class Post extends Component {
             )
         })
 
+        if (links.length === 0) {
+            return (
+                <div className={"no-content " + this.state.animatedHoverEffectNoContent}>
+                    No Post Links
+                </div>
+            )
+        }
+        
         return links;
     }
 
