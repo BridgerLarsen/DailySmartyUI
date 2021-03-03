@@ -36,6 +36,10 @@
     input {
         font-size: 40px;
         height: 118px;
+        @media screen and (max-width: 800px) {
+            font-size: 23px;
+            height: 59px;
+        }
     }
 }
 
@@ -46,5 +50,8 @@
     input {
         height: 36px;
         font-size: 22px;
+        // @media screen and (max-width: 800px) {
+        //     width: 100%; 
+        // }
     }
 }
