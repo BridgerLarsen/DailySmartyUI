@@ -1,7 +1,19 @@
 .results {
     @include defualtPageLayout();
+    grid-template-rows: 2fr 1fr 2fr;
+    height: calc(100vh - 42px);
     margin-top: 42px;
     grid-row-gap: 44px;
+
+    .content-loader {
+        display: flex;
+        justify-content: center;
+
+        svg {
+            font-size: 1.5em;
+            color: $blue-one;
+        }
+    }
 
     .results-posts-wrapper {
         .results-posts {
